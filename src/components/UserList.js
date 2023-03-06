@@ -4,11 +4,12 @@ import axios from "axios";
 function UserList() {
   const [usersO, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
+console.log(response);
   useEffect(() => {
     axios
       .get("http://localhost:8380/users")
       .then((response) => {
+        console.log(response.data);
         setUsers(response.data);
         setIsLoading(false);
       })
